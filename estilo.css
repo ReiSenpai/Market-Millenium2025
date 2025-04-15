@@ -1,0 +1,85 @@
+/*carrusel*/
+.carousel-item img {
+    height: 500px;
+}
+
+/*Para productos destacados*/
+.product-card {
+    margin: 0 10px;
+    width: 220px;
+    height: 320px;
+    /* Altura total de la tarjeta */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.square-img-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card-body {
+    padding: 15px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 8px 0;
+    font-size: 0.9rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 160px;
+        height: 280px;
+    }
+
+    .square-img-container {
+        height: 140px;
+    }
+
+    .card-body {
+        padding: 10px;
+        height: 140px;
+    }
+}
