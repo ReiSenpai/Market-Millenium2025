@@ -83,3 +83,25 @@
         height: 140px;
     }
 }
+/* Estilos responsivos para las cards */
+@media (max-width: 425px) {
+    .carousel-inner .row > div {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .carousel-inner .row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 2rem; /* Espacio entre tarjetas */
+      padding: 0 1rem; /* Espacio a los lados */
+      justify-content: center; /* Centra el contenido */
+    }
+  
+    .carousel-inner .row > div {
+      flex: 0 0 auto; /* No ajustar el ancho automáticamente */
+    }
+  }
+   

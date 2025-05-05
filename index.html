@@ -16,7 +16,9 @@
 
 <body>
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-md bg-warning p-3 fixed-top" style="background-color: #ffde59 !important;">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-md bg-warning p-3 fixed-top shadow-lg"
+      style="background-color: #ffcc00 !important;">
       <div class="container-fluid">
         <!-- Logo a la izquierda -->
         <a class="navbar-brand fs-2 fw-bold" href="index.html"><img src="/img/MMtienda.png" alt=""></a>
@@ -37,7 +39,8 @@
               <a class="nav-link fs-4 text-primary fw-bold" href="#"><i class="bi bi-bag-fill"></i> Tienda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-4 text-primary fw-bold" href="contacto.html"><i class="bi bi-people-fill"></i> Contáctanos</a>
+              <a class="nav-link fs-4 text-primary fw-bold" href="contacto.html"><i class="bi bi-people-fill"></i>
+                Contáctanos</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fs-4 text-primary fw-bold" href="#" role="button"
@@ -64,7 +67,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> <!-- Fin del Header -->
     <!-- Full screen modal -->
     <div class="container-fluid">
       <!--Carrusel inicio-->
@@ -93,7 +96,7 @@
       </div>
       <!--Carrusel Fin-->
     </div>
-  
+
     <!--Cards inicio-->
     <div class="container my-5">
       <h2 class="text-center mb-4">Nuestros Productos Destacados</h2>
@@ -102,135 +105,162 @@
         <div class="carousel-inner">
           <!-- Grupo 1 -->
           <div class="carousel-item active">
-            <div class="d-flex justify-content-center">
-              <!-- Producto 1 -->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/aceite-tottus.avif" class="card-img-top" alt="ACEITE TOTTUS">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">ACEITE TOTTUS</h5>
-                  <p class="card-text">Aceite de girasol Tottus 900 mL</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
+            <div class="container">
+              <div class="row justify-content-center">
 
-              <!-- Producto 2 -->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/aceite-tottus.avif" class="card-img-top" alt="ACEITE TOTTUS">
+                <!-- Producto 1 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/aceite-tottus.avif" class="card-img-top" alt="ACEITE TOTTUS">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">ACEITE TOTTUS</h5>
+                      <p class="card-text">Aceite de girasol Tottus 900 mL</p>
+                      <button class="btn btn-primary mt-auto w-100" id="buttoncard">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">ACEITE TOTTUS</h5>
-                  <p class="card-text">Aceite de girasol Tottus 900 mL</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
 
-              <!-- Producto 3 -->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/Glorya.avif" class="card-img-top" alt="LECHE GLORIA">
+                <!-- Producto 2 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/aceite-tottus.avif" class="card-img-top" alt="ACEITE TOTTUS">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">ACEITE TOTTUS</h5>
+                      <p class="card-text">Aceite de girasol Tottus 900 mL</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE GLORIA</h5>
-                  <p class="card-text">Sixpack Leche Gloria Reconstructiva Entera 390 gr</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
 
-              <!-- Producto 4 -->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                <!-- Producto 3 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/Glorya.avif" class="card-img-top" alt="LECHE GLORIA">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE GLORIA</h5>
+                      <p class="card-text">Sixpack Leche Gloria Reconstructiva Entera 390 gr</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE LAIVE</h5>
-                  <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
 
-              <!-- Producto 5 -->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                <!-- Producto 4 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE LAIVE</h5>
+                      <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE LAIVE</h5>
-                  <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
+
+                <!-- Producto 5 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE LAIVE</h5>
+                      <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
 
           <!-- Grupo 2 -->
           <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-              <!-- Producto 6-->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/aceite-tottus.avif" class="card-img-top" alt="ACEITE TOTTUS">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">ACEITE TOTTUS</h5>
-                  <p class="card-text">Aceite de girasol Tottus 900 mL</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
+            <div class="container">
+              <div class="row justify-content-center">
 
-              <!-- Producto 7-->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/Glorya.avif" class="card-img-top" alt="LECHE GLORIA">
+                <!-- Producto 6 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/aceite-tottus.avif" class="card-img-top" alt="ACEITE TOTTUS">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">ACEITE TOTTUS</h5>
+                      <p class="card-text">Aceite de girasol Tottus 900 mL</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE GLORIA</h5>
-                  <p class="card-text">Sixpack Leche Gloria Reconstructiva Entera 390 g</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
 
-              <!-- Producto 8-->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                <!-- Producto 7 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/Glorya.avif" class="card-img-top" alt="LECHE GLORIA">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE GLORIA</h5>
+                      <p class="card-text">Sixpack Leche Gloria Reconstructiva Entera 390 g</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE LAIVE</h5>
-                  <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
 
-              <!-- Producto 9-->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                <!-- Producto 8 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE LAIVE</h5>
+                      <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE LAIVE</h5>
-                  <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
-                </div>
-              </div>
 
-              <!-- Producto 10-->
-              <div class="card product-card">
-                <div class="square-img-container">
-                  <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                <!-- Producto 9 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE LAIVE</h5>
+                      <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">LECHE LAIVE</h5>
-                  <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
-                  <button class="btn btn-primary w-100">VER PRODUCTO</button>
+
+                <!-- Producto 10 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2 mb-4">
+                  <div class="card product-card h-100">
+                    <div class="square-img-container">
+                      <img src="product-desct/laive.avif" class="card-img-top" alt="LECHE LAIVE">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">LECHE LAIVE</h5>
+                      <p class="card-text">Mezcla Láctea Sin Lactosa Laive 480g 6 Unidades</p>
+                      <button class="btn btn-primary mt-auto w-100">VER PRODUCTO</button>
+                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
-
         <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Anterior</span>
@@ -241,11 +271,11 @@
         </button>
       </div>
     </div>
-  <!--ESTO ES PARA EL PROXIMO AVANCE-->
+    <!--ESTO ES PARA EL PROXIMO AVANCE-->
     <!--Cards final-->
 
-    <!--Tarjeta horizonta
-    <--!<div class="row mt-2">
+    <!--Tarjeta horizonta-->
+    <div class="row mt-2">
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
@@ -276,7 +306,8 @@
           </div>
         </div>
       </div>
-    </div> Fin Tarjeta horizonta-->
+    </div>
+    <!--Fin Tarjeta horizonta-->
     <div class="modal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -296,7 +327,7 @@
     </div>
   </div>
   <!--footer-->
-  <footer class="bg-warning text-primary text-center py-4 mt-5" style="background-color: #ffde59 !important;">
+  <footer class="bg-warning text-primary text-center py-4 mt-5" style="background-color: #ffcc00 !important;">
     <div class="container">
       <div class="row">
         <!-- Información de la tienda -->
