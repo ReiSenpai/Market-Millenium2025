@@ -15,5 +15,3 @@ Realiza los cambios del el terminal de vs code:
 2. Agrega los cambios al área de staging: git add .
 3. Haz un commit de tus cambios: git commit -m 'Agrega nueva característica'.
 4. Haz un push de tus cambios a tu repositorio: git push origin main
-
-Crea un Pull Request.
