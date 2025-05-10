@@ -1,17 +1,40 @@
-Instalación
+# 🌐 Desarrollo Web - Market Millenium
+
+Este repositorio contiene el desarrollo de la página web de **Market Millenium**, una empresa moderna orientada al comercio digital. El proyecto está construido con tecnologías web como HTML, CSS, JavaScript, Bootstrap y una base de datos MySQL.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5** – Estructura del sitio web  
+- **CSS3** – Estilos personalizados  
+- **JavaScript** – Funcionalidades e interactividad  
+- **Bootstrap 5** – Diseño responsive y componentes UI  
+- **MySQL** – Almacenamiento de datos  
+- **Git & GitHub** – Control de versiones y trabajo colaborativo  
+
+---
+
+## 🚀 Instalación
+
 Clona este repositorio en tu máquina local:
 
-bash
-Copiar
-Editar
-Para clonar en tu carpeta local el repositorio: git clone https://github.com/ReiSenpai/MarketMillenium.git
-Abre el archivo index.html en tu navegador para ver el proyecto en funcionamiento.
-
-Uso
-Describe aquí cómo los usuarios pueden interactuar con tu página, si tiene alguna funcionalidad específica, o cómo pueden navegar por ella.
-
-Realiza los cambios del el terminal de vs code:
-1. Para ver los cambios que haz hecho: git status
-2. Agrega los cambios al área de staging: git add .
-3. Haz un commit de tus cambios: git commit -m 'Agrega nueva característica'.
-4. Haz un push de tus cambios a tu repositorio: git push origin main
+```bash
+git clone https://github.com/ReiSenpai/MarketMillenium.git
+```
+Verifica el estado de tus cambios:
+```bash
+git status
+```
+Agrega todos los archivos modificados al área de staging:
+```bash
+git add .
+```
+Haz un commit de los cambios con un mensaje descriptivo:
+```bash
+git commit -m "Agrega nueva característica"
+```
+Sube los cambios al repositorio remoto:
+```bash
+git push origin main
+```
