@@ -1,3 +1,8 @@
+# 🚀 MarketMillenium
+
+Plataforma de comercio electrónico construida con Spring Boot y Thymeleaf.  
+---
+
 ## ▶️ Cómo iniciar el proyecto
 
 ### Visual Studio Code
