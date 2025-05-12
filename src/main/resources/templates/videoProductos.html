@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <div th:insert="~{fragmentos::encabezado}"></div>
+
+    <main>
+        <!-- Sección Misión, Visión -->
+        <section class="container my-5 pt-5">
+            <div class="row text-center">
+                <!-- Misión -->
+                <div class="col-md-6 mb-4">
+                    <h3 class="text-warning fw-bold">Misión</h3>
+                    <p>Al igual que cualquier pequeña empresa, Market Millenium tiene la misión de brindar productos de
+                        primera necesidad con calidad, atención personalizada y precios accesibles, satisfaciendo las
+                        necesidades diarias de nuestros clientes a través de un servicio eficiente y confiable que
+                        combina la atención tradicional con herramientas tecnológicas modernas.
+                    </p>
+                </div>
+                <!-- Visión -->
+                <div class="col-md-6 mb-4">
+                    <h3 class="text-warning fw-bold">Visión</h3>
+                    <p>Así mismo, cuenta con la visión de consolidarse como un minimarket líder en el sector retail
+                        local, reconocido por su innovación en la gestión comercial, atención al cliente y uso de
+                        soluciones tecnológicas que mejoran la experiencia de compra y optimizan los procesos del
+                        negocio.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección del video centrado abajo y más pequeño -->
+            <div class="row justify-content-center text-center mt-4">
+                <div class="col-md-6"> <!-- Solo 6 columnas de 12 (la mitad del ancho) -->
+                    <h3 class="text-warning fw-bold mb-3">Nuestros Productos</h3>
+                    <video controls style="width: 100%; max-width: 100%; border-radius: 10px;">
+                        <source src="video/videoplayback.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer th:insert="~{fragmentos::pie-pagina}"></footer>
+    <!-- boostrapScript JS-->
+    <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+</body>
+
+</html>

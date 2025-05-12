@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+</head>
+<body>
+    <!-- encabezado -->
+    <div th:insert="~{fragmentos::encabezado}"></div>
+    <h1>Hola mundo</h1>
+    <!-- Pie de pagina -->
+    <footer th:insert="~{fragmentos::pie-pagina}"></footer>
+    <!-- boostrapScript JS-->
+    <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+</body>
+</html>

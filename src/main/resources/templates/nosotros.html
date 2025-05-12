@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <div th:insert="~{fragmentos::encabezado}"></div>
+
+    <main>
+        <!-- Sección Historia y Rubro -->
+        <section class="container my-5 pt-5">
+            <div class="row text-center">
+                <!-- Historia -->
+                <div class="col-md-12 mb-4">
+                    <h3 class="text-warning fw-bold">Historia de la Empresa</h3>
+                    <p>Market Millenium es un minimarket ubicado y fundado en 2019 en la Av. Armando Blondet 265 de los
+                        Olivos como un emprendimiento familiar. Inició con un local físico pequeño, atendiendo
+                        necesidades básicas de la comunidad. Con el tiempo, el negocio creció en productos y
+                        operaciones, consolidándose como un punto de venta confiable a nivel local.</p>
+                    <img src="img/img.png" alt="Historia de la Empresa" class="img-fluid rounded mt-3">
+                </div>
+                <!-- Rubro del Negocio -->
+                <div class="col-md-12 mb-4">
+                    <h3 class="text-warning fw-bold">Rubro del Negocio</h3>
+                    <p>Market Millenium pertenece al rubro del comercio minorista de productos de consumo masivo,
+                        específicamente en el sector de minimarkets. Su actividad principal consiste en la venta directa
+                        de artículos de primera necesidad como alimentos, bebidas, productos de limpieza y artículos de
+                        uso diario. Este tipo de negocio se caracteriza por atender de forma inmediata y directa al
+                        consumidor final, ofreciendo productos esenciales en cantidades reducidas y con alta rotación.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Foto de Productos -->
+        <div class="row justify-content-center text-center mt-4">
+            <div class="col-md-6">
+                <h3 class="text-warning fw-bold mb-3">Nuestros Productos</h3>
+                <img src="img/produc.png" alt="Nuestros Productos" class="img-fluid rounded mt-3">
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer th:insert="~{fragmentos::pie-pagina}"></footer>
+    <!-- boostrapScript JS-->
+    <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+</body>
+
+</html>

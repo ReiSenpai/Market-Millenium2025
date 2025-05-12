@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+    <style>
+        /* Estilos generales de la página */
+        body {
+            background-color: #fff6e5;
+            /* Fondo de la página color naranja claro */
+            color: #6a4e22;
+            /* Texto en un marrón suave para contraste */
+        }
+
+        .contenedor-sugerencias {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #f57c00;
+            /* Naranja más vibrante para los títulos */
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #d67c19;
+            /* Un naranja más suave para las etiquetas */
+        }
+
+        .btn-enviar {
+            background: #f57c00;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn-enviar:hover {
+            background: #e65100;
+            /* Naranja más oscuro para el hover */
+            color: #fff;
+        }
+
+        .modal-header {
+            background: #ff9800;
+            /* Naranja cálido para el modal */
+            color: #fff;
+        }
+
+        .modal-footer .btn-secondary {
+            background: #ffcc80;
+            color: #6a4e22;
+        }
+
+        .modal-footer .btn-secondary:hover {
+            background: #ffb74d;
+            /* Naranja intermedio */
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <div th:insert="~{fragmentos::encabezado}"></div>
+
+    <main>
+        <!-- Contenedor principal para las sugerencias -->
+        <div class="container py-5">
+            <div class="contenedor-sugerencias">
+                <div class="row">
+                    <!-- Sección para el mensaje de bienvenida -->
+                    <div class="col-12 col-md-6 mb-4 mb-md-0">
+                        <h2>¡Queremos escuchar tus ideas!</h2>
+                        <p>Tu opinión es muy importante para nosotros. Comparte tu sugerencia, comentario o idea para
+                            mejorar.</p>
+                    </div>
+                    <!-- Formulario para enviar sugerencias -->
+                    <div class="col-12 col-md-6">
+                        <form>
+                            <!-- Campo para el nombre -->
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre (opcional)</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                            </div>
+                            <!-- Campo para el correo electrónico -->
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico (opcional)</label>
+                                <input type="email" class="form-control" id="correo" placeholder="correo@ejemplo.com">
+                            </div>
+                            <!-- Campo para la sugerencia -->
+                            <div class="mb-3">
+                                <label for="sugerencia" class="form-label">Tu sugerencia</label>
+                                <textarea class="form-control" id="sugerencia" rows="5" required
+                                    placeholder="Escribe aquí..."></textarea>
+                            </div>
+                            <!-- Botón para enviar el formulario y abrir el modal -->
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-enviar" data-bs-toggle="modal"
+                                    data-bs-target="#modalConfirmacion">Enviar sugerencia</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación que se muestra al enviar una sugerencia -->
+        <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Cabecera del modal -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">¡Sugerencia enviada!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Cuerpo del modal con mensaje de agradecimiento -->
+                    <div class="modal-body">Gracias por enviarnos tu sugerencia.</div>
+                    <!-- Pie del modal con el botón para cerrar -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer th:insert="~{fragmentos::pie-pagina}"></footer>
+    <!-- boostrapScript JS-->
+    <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+</head>
+
+<body>
+    <!-- encabezado -->
+    <div th:insert="~{fragmentos::encabezado}"></div>
+
+    <main>
+        <h2 class="section-title">¡Conéctate con nosotros!</h2>
+
+        <!-- Carrusel de Redes Sociales -->
+        <div id="carouselRedes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Facebook -->
+                <div class="carousel-item active">
+                    <div class="card card-social mx-auto" style="max-width: 700px;">
+                        <i class="bi bi-facebook"></i>
+                        <div class="text-start">
+                            <h5 class="card-title">Facebook</h5>
+                            <p class="card-text">Síguenos en Facebook para enterarte de las últimas novedades y
+                                promociones
+                                exclusivas.</p>
+                            <a href="https://www.facebook.com/marketmillenium" class="btn btn-social mt-2"
+                                target="_blank">Ir a
+                                Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="carousel-item">
+                    <div class="card card-social mx-auto" style="max-width: 700px;">
+                        <i class="bi bi-instagram"></i>
+                        <div class="text-start">
+                            <h5 class="card-title">Instagram</h5>
+                            <p class="card-text">Descubre productos, eventos y momentos únicos de nuestra tienda.
+                            </p>
+                            <a href="https://www.instagram.com/marketmillenium" class="btn btn-social mt-2"
+                                target="_blank">Ir a
+                                Instagram</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="carousel-item">
+                    <div class="card card-social mx-auto" style="max-width: 700px;">
+                        <i class="bi bi-whatsapp"></i>
+                        <div class="text-start">
+                            <h5 class="card-title">WhatsApp</h5>
+                            <p class="card-text">Escríbenos por WhatsApp y recibe atención personalizada al
+                                instante.</p>
+                            <a href="https://wa.me/51912345678" class="btn btn-social mt-2" target="_blank">Chatea
+                                en WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRedes" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselRedes" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        </div>
+
+        <!-- Sección Ubícanos -->
+        <div class="container mt-5">
+            <h2 class="text-center" style="color: #e65100; font-weight: bold;">Ubícanos</h2>
+            <p class="text-center mb-4" style="color: #555;">Av. Armando Blondet 265, Lima 15304<br>Teléfono: +51 987
+                654 321
+            </p>
+
+            <div class="mapa-container"
+                style="border-radius: 15px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.1);">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.1229492150424!2d-77.0714161!3d-11.965988500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce3b199f7d73%3A0x595bdbcfebb2f7db!2sMarket%20Millenium!5e0!3m2!1ses-419!2spe!4v1744594725486!5m2!1ses-419!2spe"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer th:insert="~{fragmentos::pie-pagina}"></footer>
+    <!-- boostrapScript JS-->
+    <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+</body>
+
+</html>
