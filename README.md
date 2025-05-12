@@ -18,4 +18,4 @@ Plataforma de comercio electrónico construida con Spring Boot y Thymeleaf.
 2. Busca la carpeta del proyecto y ábrela como un proyecto Maven.
 3. Da clic derecho en el proyecto `MarketmilleniumApplication.java` → **Run File**.
 
-> En el navegador ingresa a la misma URL que VSCode
+> En navegador ingresa la misma URL que VSCode
