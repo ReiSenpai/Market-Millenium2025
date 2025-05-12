@@ -11,4 +11,4 @@
 
 1. Abre NetBeans y selecciona **Abrir proyecto**.
 2. Busca la carpeta del proyecto y ábrela como un proyecto Maven.
-3. Da clic derecho en el proyecto → **Run**.
+3. Da clic derecho en el proyecto `MarketmilleniumApplication.java` → **Run File**.
