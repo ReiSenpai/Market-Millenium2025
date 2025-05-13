@@ -1,150 +1,115 @@
 body {
-    margin: 0;
-    background-color: #0d6efd;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d6efd;
 }
 
 #header {
-    border-radius: 0 0 50px 50px;
-}
-
-.main {
-    flex-grow: 1;
+  border-radius: 0 0 50px 50px;
+  font-family: "Poppins", sans-serif;
 }
 
 .text-hover:hover {
-    color: white !important;
+  color: white !important;
 }
-
-/*carrusel*/
 .carousel-item img {
-    height: 600px !important;
-    width: 100% !important;
-    display: block;
-}
-
-.carousel {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
-/*Para productos destacados*/
-.product-card {
-    margin: 0 10px;
-    width: 220px;
-    height: 320px;
-    /* Altura total de la tarjeta */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.square-img-container {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 10px;
-}
-
-.card-body {
-    padding: 15px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-title {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.card-text {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.btn-primary {
-    background-color: #0d6efd;
-    border: none;
-    padding: 8px 0;
-    font-size: 0.9rem;
+  height: 600px !important;
+  width: 100% !important;
+  display: block;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
-footer {
-    border-radius: 40px 40px 0 0;
-    position: relative;
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #0d6dfdaa;
 }
 
-@media (max-width: 768px) {
-    .product-card {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 15px;
-    }
-
-    .square-img-container {
-        height: 140px;
-    }
-
-    .card-body {
-        padding: 10px;
-        height: 140px;
-    }
+.carousel-indicators [data-bs-target] {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #000000b8;
+  opacity: 0.6;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  margin: 0 4px;
+  border: none;
 }
 
-/* Estilos responsivos para las cards */
-@media (max-width: 425px) {
-    .carousel-inner .row>div {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+.carousel-indicators [data-bs-target]:hover {
+  background-color: #000000aa;
+  opacity: 1;
 }
 
-@media (min-width: 1024px) {
-    .carousel-inner .row {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 3rem;
-        /* Espacio entre tarjetas */
-        padding: 1 1rem;
-        /* Espacio a los lados */
-        justify-content: center;
-        /* Centra el contenido */
-    }
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #ffffff;
+}
 
-    .carousel-inner .row>div {
-        flex: 0 0 auto;
-        /* No ajustar el ancho automáticamente */
-    }
+
+.logo-cloud {
+  background-color: #f8f9fa;
+}
+
+.logo-item {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo-item i {
+  font-size: 2.5rem;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover i {
+  color: #007bff;
+}
+
+
+
+.footer {
+  background-color: #ffcc00 !important;
+}
+
+@media (max-width: 767px) {
+  .carousel-inner img {
+    height: 200px;
+    /* Ajusta la altura de las imágenes del carrusel en pantallas pequeñas */
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-inner img {
+    height: 400px;
+  }
+}
+
+footer .container img {
+  max-width: 100%;
+  height: auto;
 }

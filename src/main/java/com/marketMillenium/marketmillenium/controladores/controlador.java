@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Controlador {
+public class controlador {
     @GetMapping({"/", "/index"})
     public String inicio(Model model) {
         return "index";

@@ -1,12 +1,12 @@
 <!-- head -->
-<div th:fragment="headFragmento">
+<div th:fragment="headFragmento" xmlns:th="http://www.w3.org/1999/xhtml">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
 </div>
 
 <!-- boostrapScript -->
@@ -20,88 +20,64 @@
 <div th:fragment="encabezado" class="container-fluid">
     <!-- Header -->
     <nav class="navbar navbar-expand-md bg-warning p-3 fixed-top shadow-lg" id="header"
-        style="background-color: #ffcc00 !important;">
+         style="background-color: #ffcc00 !important;">
         <div class="container-fluid">
-            <!-- Logo a la izquierda -->
-            <a th:href="@{/}" class="navbar-brand fs-2 fw-bold"><img src="/img/MMtienda.png" alt=""></a>
-
+            <a th:href="@{/}" class="navbar-brand fs-2 fw-bold" href="index.html"><img src="/img/MMtienda.png"
+                                                                        alt="Logo de Market Millenium"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Menú alineado a la derecha -->
             <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <!-- inicio -->
-                    <li class="nav-item">
-                        <a th:href="@{/}" class="nav-link active fs-4 text-primary text-hover fw-bold"
-                            aria-current="page"><i class="bi bi-house-door-fill"></i> Inicio</a>
-                    </li>
-                    <!-- tienda (sin direccion > borrar esto cuando lo agregen porfa <) -->
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 text-primary fw-bold" href="#"><i class="bi bi-bag-fill"></i> Tienda</a>
-                    </li>
-                    <!-- contacto -->
-                    <li class="nav-item">
-                        <a th:href="@{/contacto}" class="nav-link fs-4 text-primary fw-bold"><i
-                                class="bi bi-people-fill"></i>
-                            Contáctanos</a>
-                    </li>
+                    <li class="nav-item"><a th:href="@{/index}" class="nav-link active fs-4 text-primary text-hover fw-bold"><i class="bi bi-house-door-fill"></i> Inicio</a></li>
+                    <li class="nav-item"><a th:href="@{/}" class="nav-link fs-4 text-primary text-hover fw-bold"><i class="bi bi-bag-fill"></i>
+                        Tienda</a></li>
+                    <li class="nav-item"><a th:href="@{/contacto}" class="nav-link fs-4 text-primary text-hover fw-bold"><i
+                            class="bi bi-people-fill"></i> Contáctanos</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-4 text-primary fw-bold" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-hand-index-fill"></i> Conocenos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a th:href="@{/nosotros}" class="nav-link fs-4 text-primary">Nosotros</a></li>
-                            <li><a th:href="@{/contacto}" class="nav-link fs-4 text-primary">Ubicanos</a></li>
-                            <li><a th:href="@{/videoProductos}" class="nav-link fs-4 text-primary">Presentación</a>
-                            </li>
-                            <li><a th:href="@{/sugerencias}" class="nav-link fs-4 text-primary">Sugerencias</a></li>
+                        <a class="nav-link dropdown-toggle fs-4 text-primary text-hover fw-bold" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-hand-index-fill"></i> Conocenos</a>
+                        <ul class="dropdown-menu" style="background-color: #ffcc00 !important;">
+                            <li><a th:href="@{/nosotros}" class="nav-link fs-5 text-primary text-hover fw-semibold">Nosotros</a></li>
+                            <li><a th:href="@{/nosotros}" class="nav-link fs-5 text-primary text-hover fw-semibold" >Ubicanos</a></li>
+                            <li><a th:href="@{/videoProductos}" class="nav-link fs-5 text-primary text-hover fw-semibold">Presentación</a></li>
+                            <li><a th:href="@{/sugerencias}" class="nav-link fs-5 text-primary text-hover fw-semibold">Sugerencias</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <!-- no hay enlace @{/} modificar cuando se cree uno. INACTIVO -->
-                        <a th:href="@{/}" class="nav-link dropdown-toggle fs-4 text-primary fw-bold" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-circle"></i> Usuario
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- no hay enlace @{/} modificar cuando se cree uno. INACTIVO -->
-                            <li><a th:href="@{/}" class="dropdown-item text-primary">Iniciar Sesion</a></li>
-                            <li><a th:href="@{/}" class="dropdown-item text-primary">Registrar</a></li>
+                        <a class="nav-link dropdown-toggle fs-4 text-primary text-hover fw-bold" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i> Usuario</a>
+                        <ul class="dropdown-menu" style="background-color: #ffcc00 !important;">
+                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" href="#">Iniciar Sesion</a></li>
+                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" href="#">Registrar</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav> <!-- Fin del Header -->
+    </nav><!-- Fin del Header -->
 </div>
 
 <!-- Footer de pagina -->
-<footer th:fragment="pie-pagina" class="text-primary text-center py-4 mt-5"
+<footer th:fragment="pie-pagina" class="footer bg-warning text-center py-4"
     style="background-color: #ffcc00 !important;">
     <div class="container">
         <div class="row">
-            <!-- Información de la tienda -->
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4">
                 <h5>Market Millenium</h5>
                 <p>La tienda de confianza para tus necesidades diarias.</p>
             </div>
-            <!-- Enlaces rápidos -->
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4">
                 <h5>Enlaces Rápidos</h5>
                 <ul class="list-unstyled">
-                    <li><a th:href="@{/}" class="text-primary">Inicio</a></li>
-                    <li><a th:href="@{/contacto}" class="text-primary">Tienda</a></li>
-                    <li><a th:href="@{/nosotros}" class="text-primary">Nosotros</a></li>
-                    <!-- Aun no hay poliitica de privacidad -->
-                    <li><a th:href="@{/}" class="text-primary">Política de Privacidad</a></li>
+                    <li><a hth:ref="@{/}" class="text-primary">Inicio</a></li>
+                    <li><a th:ref="@{/}" class="text-primary">Tienda</a></li>
+                    <li><a th:ref="@{/nosotros}" class="text-primary">Nosotros</a></li>
+                    <li><a th:ref="@{/}" class="text-primary">Política de Privacidad</a></li>
                 </ul>
             </div>
-            <!-- Información de contacto -->
-            <div class="col-md-4 mb-3 text-primary">
+            <div class="col-md-4">
                 <h5>Contacto</h5>
                 <p><i class="bi bi-telephone-fill"></i> Teléfono: +51 123 456 789</p>
                 <p><i class="bi bi-envelope-fill"></i> Email: contacto@marketmillenium.com</p>
@@ -109,6 +85,6 @@
         </div>
         <hr class="bg-white">
         <p>&copy; 2025 Market Millenium</p>
-        <img src="/img/payments.png" alt="payments">
+        <img src="/img/payments.png" alt="Métodos de pago">
     </div>
 </footer>
