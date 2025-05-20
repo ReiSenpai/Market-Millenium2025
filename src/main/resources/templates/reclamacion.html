@@ -57,115 +57,113 @@
 </head>
 
 <body>
-    <!-- encabezado -->
-    <div th:insert="~{fragmentos::encabezado}"></div>
+<!-- encabezado -->
+<div th:insert="~{fragmentos::encabezado}"></div>
 
-    <main>
-        <!-- Contenedor del formulario -->
-        <div class="container py-5">
-            <div class="formulario-reclamaciones">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Libro de Reclamaciones</h2>
-                        <p>Si tuviste algún inconveniente con nuestro servicio o producto, por favor llena este
-                            formulario.</p>
-                    </div>
+<main>
+    <div class="container py-5">
+        <div class="formulario-reclamaciones">
+            <div class="row">
+                <div class="col-12">
+                    <h2 th:text="#{page.title}">Libro de Reclamaciones</h2>
+                    <p th:text="#{page.subtitle}">Si tuviste algun inconveniente...</p>
+                </div>
 
-                    <!-- Formulario de reclamos -->
-                    <div class="col-12">
-                        <form>
-                            <!-- Datos del reclamante -->
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="nombre" class="form-label">Nombre completo</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez"
-                                        required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="dni" class="form-label">DNI</label>
-                                    <input type="text" class="form-control" id="dni" placeholder="12345678" required>
-                                </div>
+                <!-- Formulario de reclamos -->
+                <div class="col-12">
+                    <form>
+                        <!-- Datos del reclamante -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label" th:text="#{form.name}">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre"
+                                       th:placeholder="#{placeholder.name}" required>
                             </div>
+                            <div class="col-md-6">
+                                <label for="dni" class="form-label" th:text="#{form.dni}">DNI</label>
+                                <input type="text" class="form-control" id="dni"
+                                       th:placeholder="#{placeholder.dni}" required>
+                            </div>
+                        </div>
 
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="telefono" class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" id="telefono" placeholder="+51 999 999 999">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label" th:text="#{form.phone}">Telefono</label>
+                                <input type="tel" class="form-control" id="telefono"
+                                       th:placeholder="#{placeholder.phone}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="correo" class="form-label" th:text="#{form.email}">Correo electronico</label>
+                                <input type="email" class="form-control" id="correo"
+                                       th:placeholder="#{placeholder.email}">
+                            </div>
+                        </div>
+
+                        <!-- Detalle del reclamo -->
+                        <div class="mb-3">
+                            <label for="producto" class="form-label" th:text="#{form.product}">Producto o servicio</label>
+                            <input type="text" class="form-control" id="producto"
+                                   th:placeholder="#{placeholder.product}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="detalle" class="form-label" th:text="#{form.details}">Detalle del reclamo</label>
+                            <textarea class="form-control" id="detalle" rows="5"
+                                      th:placeholder="#{placeholder.details}" required></textarea>
+                        </div>
+
+                        <!-- Tipo de reclamo -->
+                        <div class="mb-3">
+                            <label class="form-label" th:text="#{form.claim_type}">Tipo de reclamo</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipoReclamo" id="queja" value="queja" required>
+                                    <label class="form-check-label" for="queja" th:text="#{form.complaint}">Queja</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="correo" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="correo"
-                                        placeholder="correo@ejemplo.com">
-                                </div>
-                            </div>
-
-                            <!-- Detalle del reclamo -->
-                            <div class="mb-3">
-                                <label for="producto" class="form-label">Producto o servicio</label>
-                                <input type="text" class="form-control" id="producto" placeholder="Ej. Agua de mesa x2L"
-                                    required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="detalle" class="form-label">Detalle del reclamo</label>
-                                <textarea class="form-control" id="detalle" rows="5"
-                                    placeholder="Escribe el detalle del inconveniente..." required></textarea>
-                            </div>
-
-                            <!-- Tipo de reclamo -->
-                            <div class="mb-3">
-                                <label class="form-label">Tipo de reclamo</label>
-                                <div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="tipoReclamo" id="queja"
-                                            value="queja" required>
-                                        <label class="form-check-label" for="queja">Queja</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="tipoReclamo" id="reclamo"
-                                            value="reclamo">
-                                        <label class="form-check-label" for="reclamo">Reclamo</label>
-                                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipoReclamo" id="reclamo" value="reclamo">
+                                    <label class="form-check-label" for="reclamo" th:text="#{form.claim}">Reclamo</label>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Botón-->
-                            <div class="d-grid">
-                                <button type="button" class="btn btn-enviar" data-bs-toggle="modal"
-                                    data-bs-target="#modalConfirmacion">Enviar reclamo</button>
-                            </div>
-                        </form>
-                    </div>
+                        <!-- Botón-->
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-enviar" data-bs-toggle="modal"
+                                    data-bs-target="#modalConfirmacion" th:text="#{form.submit}">Enviar reclamo</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="language-selector" style="margin-left: auto; margin-right: 15px;">
+        <a th:href="@{/reclamacion(lang='es')}" class="btn btn-sm btn-outline-secondary">ES</a>
+        <a th:href="@{/reclamacion(lang='en')}" class="btn btn-sm btn-outline-secondary">EN</a>
+    </div>
 
-        <!-- Modal de confirmación -->
-        <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Cabecera-->
-                    <div class="modal-header">
-                        <h5 class="modal-title">¡Reclamo recibido!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <!-- Cuerpo-->
-                    <div class="modal-body">
-                        Gracias por contactarnos. Revisaremos tu reclamo y nos comunicaremos contigo lo antes posible.
-                    </div>
-                    <!-- Pie -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
+    <!-- Modal de confirmación -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" th:text="#{modal.title}">¡Reclamo recibido!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" th:text="#{modal.message}">
+                    Gracias por contactarnos. Revisaremos tu reclamo...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="#{modal.close}">Cerrar</button>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <!-- Pie de pagina -->
-    <footer th:insert="~{fragmentos::pie-pagina}"></footer>
-    <!-- boostrapScript JS-->
-    <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+<!-- Pie de pagina -->
+<footer th:insert="~{fragmentos::pie-pagina}"></footer>
+<th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
 </body>
 
 </html>
