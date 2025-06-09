@@ -130,7 +130,7 @@
                     <div class="modal-footer">
                         <div class="error" id="error-message"></div>
                         <button type="submit" class="btn btn-primary button-form"><span>Iniciar Sesion</span></button>
-                        <button type="button" class="btn btn-primary button-form" onclick="toggleForms()"><span>Registrarse</span>
+                        <button type="button" class="btn btn-primary button-form" onclick="toggleForms()"> <span>Registrarse</span>
                         </button>
                     </div>
                 </form>
@@ -175,89 +175,90 @@
             </div>
         </div>
     </div>
-</div>
+    <script defer>
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const loginError = document.getElementById('loginError');
+        const registerError = document.getElementById('registerError');
 
-<script>
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    const loginError = document.getElementById('loginError');
-    const registerError = document.getElementById('registerError');
+        const registerName = document.getElementById('registerName');
+        const registerLastName = document.getElementById('registerLastName');
+        const registerEmail = document.getElementById('registerEmail');
+        const registerPassword = document.getElementById('registerPassword');
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const registerButton = document.getElementById('registerButton');
 
-    const registerName = document.getElementById('registerName');
-    const registerLastName = document.getElementById('registerLastName');
-    const registerEmail = document.getElementById('registerEmail');
-    const registerPassword = document.getElementById('registerPassword');
-    const termsCheckbox = document.getElementById('termsCheckbox');
-    const registerButton = document.getElementById('registerButton');
-
-    function toggleForms() {
-  loginForm.classList.toggle('hidden');
-  loginForm.classList.toggle('visible');
-  registerForm.classList.toggle('hidden');
-  registerForm.classList.toggle('visible');
-  loginError.textContent = '';
-  registerError.textContent = '';
-  loginForm.reset();
-  registerForm.reset();
-  termsCheckbox.checked = false;
-  registerButton.disabled = true;
-}
-
-    function validateEmail(email) {
-      return email.includes('@') && email.endsWith('.com');
+        function toggleForms() {
+      loginForm.classList.toggle('hidden');
+      loginForm.classList.toggle('visible');
+      registerForm.classList.toggle('hidden');
+      registerForm.classList.toggle('visible');
+      loginError.textContent = '';
+      registerError.textContent = '';
+      loginForm.reset();
+      registerForm.reset();
+      termsCheckbox.checked = false;
+      registerButton.disabled = true;
     }
 
-    loginForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = document.getElementById('loginEmail').value.trim();
-      const pass = document.getElementById('loginPassword').value.trim();
+        function validateEmail(email) {
+          return email.includes('@') && email.endsWith('.com');
+        }
 
-      if (!validateEmail(email)) {
-        loginError.textContent = "El correo debe contener '@' y terminar en '.com'";
-        return;
-      }
-      if (pass.length === 0) {
-        loginError.textContent = "La contraseña es obligatoria.";
-        return;
-      }
+        loginForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const email = document.getElementById('loginEmail').value.trim();
+          const pass = document.getElementById('loginPassword').value.trim();
 
-      loginError.textContent = '';
-      alert("Inicio de sesión exitoso");
-      loginForm.reset();
-    });
+          if (!validateEmail(email)) {
+            loginError.textContent = "El correo debe contener '@' y terminar en '.com'";
+            return;
+          }
+          if (pass.length === 0) {
+            loginError.textContent = "La contraseña es obligatoria.";
+            return;
+          }
 
-    termsCheckbox.addEventListener('change', () => {
-      registerButton.disabled = !termsCheckbox.checked;
-    });
+          loginError.textContent = '';
+          alert("Inicio de sesión exitoso");
+          loginForm.reset();
+        });
 
-    registerForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+        termsCheckbox.addEventListener('change', () => {
+          registerButton.disabled = !termsCheckbox.checked;
+        });
 
-      const name = registerName.value.trim();
-      const lastName = registerLastName.value.trim();
-      const email = registerEmail.value.trim();
-      const pass = registerPassword.value.trim();
+        registerForm.addEventListener('submit', function (e) {
+          e.preventDefault();
 
-      if (name === "" || lastName === "") {
-        registerError.textContent = "Nombre y apellidos son obligatorios.";
-        return;
-      }
-      if (!validateEmail(email)) {
-        registerError.textContent = "El correo debe contener '@' y terminar en '.com'";
-        return;
-      }
-      if (pass === "") {
-        registerError.textContent = "La contraseña es obligatoria.";
-        return;
-      }
-      if (!termsCheckbox.checked) {
-        registerError.textContent = "Debes aceptar los términos y condiciones.";
-        return;
-      }
+          const name = registerName.value.trim();
+          const lastName = registerLastName.value.trim();
+          const email = registerEmail.value.trim();
+          const pass = registerPassword.value.trim();
 
-      registerError.textContent = '';
-      alert(`Registro exitoso de: ${name} ${lastName}`);
-      registerForm.reset();
-      toggleForms(); // Cambiar a login con animación
-    });
-</script>
+          if (name === "" || lastName === "") {
+            registerError.textContent = "Nombre y apellidos son obligatorios.";
+            return;
+          }
+          if (!validateEmail(email)) {
+            registerError.textContent = "El correo debe contener '@' y terminar en '.com'";
+            return;
+          }
+          if (pass === "") {
+            registerError.textContent = "La contraseña es obligatoria.";
+            return;
+          }
+          if (!termsCheckbox.checked) {
+            registerError.textContent = "Debes aceptar los términos y condiciones.";
+            return;
+          }
+
+          registerError.textContent = '';
+          alert(`Registro exitoso de: ${name} ${lastName}`);
+          registerForm.reset();
+          toggleForms(); // Cambiar a login con animación
+        });
+
+    </script>
+</div>
+
