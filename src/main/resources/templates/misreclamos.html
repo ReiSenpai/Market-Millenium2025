@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+    <style>
+        body {
+            background-color: #fff6e5;
+            color: #6a4e22;
+        }
+
+        .tabla-reclamos {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 60px; /* Agregado para separar del navbar */
+}
+
+        h2 {
+            color: #f57c00;
+        }
+
+        th {
+            background-color: #f57c00;
+            color: white;
+        }
+
+        td {
+            color: #6a4e22;
+        }
+
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Encabezado -->
+<div th:insert="~{fragmentos::encabezado}"></div>
+
+<main class="flex-grow-1">
+    <div class="container py-5">
+        <div class="tabla-reclamos">
+            <h2>Mis Reclamos</h2>
+            <p>Aquí puedes ver los reclamos que has registrado en el sistema.</p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped mt-4">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Producto o Servicio</th>
+                        <th>Detalle</th>
+                        <th>Tipo</th>
+                        <th>Nombre</th>
+                        <th>DNI</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="reclamo, iter : ${reclamos}">
+                        <td th:text="${iter.index + 1}">1</td>
+                        <td th:text="${reclamo.productoServicio}">Producto</td>
+                        <td th:text="${reclamo.detalle}">Detalle</td>
+                        <td th:text="${reclamo.tipoReclamo}">Tipo</td>
+                        <td th:text="${reclamo.nombreCompleto}">Nombre</td>
+                        <td th:text="${reclamo.dni}">DNI</td>
+                        <td th:text="${reclamo.telefono}">Teléfono</td>
+                        <td th:text="${reclamo.correo}">Correo</td>
+
+                    </tr>
+                    <tr th:if="${reclamos.size() == 0}">
+                        <td colspan="9" class="text-center">No has registrado ningún reclamo.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Pie de página -->
+<footer th:insert="~{fragmentos::pie-pagina}" class="mt-auto"></footer>
+<th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+
+</body>
+
+</html>

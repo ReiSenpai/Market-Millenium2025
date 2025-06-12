@@ -60,12 +60,17 @@
                             Usuario</a>
                         <ul class="dropdown-menu" style="background-color: #ffcc00 !important;">
                             <li>
-                                <button type="button" class="dropdown-item fs-5 text-primary fw-semibold"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">Iniciar Sesion
-                                </button>
+                                <a class="dropdown-item fs-5 text-primary fw-semibold" href="/login">
+                                    Iniciar Sesión
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item fs-5 text-primary fw-semibold" href="/Registrarse">
+                                    Registrarse
+                                </a>
                             </li>
                         </ul>
+
                     </li>
                 </ul>
             </div>
@@ -104,7 +109,7 @@
 </footer>
 
 <!--Configuracion del login y registrer (incluye sus forms y script)-->
-<div th:fragment="staticBackdrop" class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+  <div th:fragment="staticBackdrop" class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
      data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">

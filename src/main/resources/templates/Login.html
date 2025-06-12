@@ -19,6 +19,7 @@
             background-color: #fff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
+            margin-top: 90px;
         }
 
         .form-label {
@@ -43,12 +44,16 @@
             border-color: #084298;
         }
 
-        body.login-page {
-            background: linear-gradient(135deg, #e0f0ff, #ffffff);
-            min-height: 100vh;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
+       body.login-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f0ff, #ffffff);
+      }
+        main {
+    flex: 1;
+}
+
     </style>
 </head>
 <body class="login-page">
@@ -78,11 +83,7 @@
 </main>
 
 <!-- Footer -->
-<footer th:insert="~{fragmentos::pie-pagina}"></footer>
-
-<div th:replace="fragmentos :: staticBackdrop"></div>
-
-<!-- Bootstrap JS -->
+<footer th:insert="~{fragmentos::pie-pagina}" class="mt-auto"></footer>
 <th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
 
 </body>

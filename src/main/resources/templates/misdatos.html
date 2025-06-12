@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datos del Usuario</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" />
+    <link rel="stylesheet" th:href="@{/css/global.css}" />
+
+    <th:block th:insert="~{fragmentos::headFragmento}"></th:block>
+
+    <style>
+        body {
+             display: flex;
+            flex-direction: column;
+           min-height: 100vh;
+        background: linear-gradient(135deg, #e0f0ff, #ffffff);
+         }
+    main {
+        flex: 1;
+      }
+
+    h2 {
+        color: #333;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 90px;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    input[readonly] {
+        background-color: #e9ecef;
+    }
+
+    .btn-group {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="button"] {
+        background-color: #007bff;
+        color: white;
+    }
+
+    button[type="submit"] {
+        background-color: #28a745;
+        color: white;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+    </style>
+</head>
+<body class="index-page">
+<div th:insert="~{fragmentos::encabezado}"></div>
+
+<main class="container my-5">
+    <h2 class="mb-4 text-center">Datos del Usuario</h2>
+    <form th:action="@{/actualizar}" method="post" id="formDatos">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" th:value="${usuario.nombre}" readonly><br>
+
+        <label>Apellido:</label>
+        <input type="text" name="apellido" th:value="${usuario.apellido}" readonly><br>
+
+        <label>DNI:</label>
+        <input type="text" name="dni" th:value="${usuario.dni}" readonly><br>
+
+        <label>Correo:</label>
+        <input type="email" name="email" th:value="${usuario.email}" readonly><br>
+
+        <label>Dirección:</label>
+        <input type="text" name="direccion" th:value="${usuario.direccion}" readonly><br>
+
+        <label>Teléfono:</label>
+        <input type="text" name="telefono" th:value="${usuario.telefono}" readonly><br>
+
+        <button type="button" onclick="activarEdicion()">Modificar datos</button>
+        <button type="submit" id="btnGuardar" style="display:none;">Guardar cambios</button>
+    </form>
+
+</main>
+<script>
+    function activarEdicion() {
+        const inputs = document.querySelectorAll('#formDatos input');
+        inputs.forEach(input => input.removeAttribute('readonly'));
+        document.getElementById('btnGuardar').style.display = 'inline';
+    }
+</script>
+<footer th:insert="~{fragmentos::pie-pagina}"></footer>
+<div th:replace="fragmentos :: staticBackdrop"></div>
+<th:block th:insert="~{fragmentos::boostrap-script}"></th:block>
+</body>
+</html>

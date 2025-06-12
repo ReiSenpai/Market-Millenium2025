@@ -25,7 +25,9 @@ public class Usuario {
 
     private String direccion;
 
-    // Getters y setters (puedes generar automáticamente con tu IDE)
+    private String telefono;
+
+    // Getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getNombre() { return nombre; }
@@ -40,4 +42,6 @@ public class Usuario {
     public void setPassword(String password) { this.password = password; }
     public String getDireccion() { return direccion; }
     public void setDireccion(String direccion) { this.direccion = direccion; }
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
 }

@@ -22,10 +22,6 @@ public class controlador {
     public String nosotros(){
         return "nosotros";
     }
-    @GetMapping("/reclamacion")
-    public String reclamacion(){
-        return "reclamacion";
-    } 
     @GetMapping("/sugerencias")
     public String sugerencias(){
         return "sugerencias";

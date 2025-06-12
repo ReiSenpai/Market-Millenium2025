@@ -25,7 +25,6 @@ public class RegistroController {
     @PostMapping("/Registrarse")
     public String guardarUsuario(@ModelAttribute Usuario usuario, Model model) {
         usuarioService.guardar(usuario);
-        model.addAttribute("mensaje", "Usuario registrado con éxito");
         return "Login";
     }
 }

@@ -23,30 +23,20 @@ public class LoginController {
 
     @PostMapping("/login")
     public String procesarLogin(
-            @RequestParam("correo") String correo,
+            @RequestParam("correo") String correo, // Guarda el correo del formulario
             @RequestParam("contrasena") String contrasena,
             HttpSession session,
             Model model) {
-
+        // Buscar el correo del usuario en la bd
         Usuario usuario = usuarioService.buscarPorCorreo(correo);
 
         if (usuario != null && usuario.getPassword().equals(contrasena)) {
-            session.setAttribute("usuarioLogueado", usuario);  // 👉 Guarda usuario en sesión
-            return "redirect:/index";  // o redirige donde tú quieras (p.ej. inicio)
+            session.setAttribute("usuarioLogueado", usuario);  //  Guarda usuario en sesión
+            return "redirect:/index";  // inicio
         } else {
-            model.addAttribute("error", "Correo o contraseña incorrectos");
+            model.addAttribute("error", "Correo o contraseña incorrectos"); // si falla
             return "login";
         }
     }
-    @GetMapping("/misdatos")
-    public String verDatosUsuario(HttpSession session, Model model) {
-        Usuario usuario = (Usuario) session.getAttribute("usuarioLogueado");
 
-        if (usuario != null) {
-            model.addAttribute("usuario", usuario); // 👉 Envía los datos a la vista
-            return "Misdatos"; // 👉 Nombre exacto del HTML
-        } else {
-            return "redirect:/login"; // 🔒 Si no está logueado, lo manda al login
-        }
-    }
 }
