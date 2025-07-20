@@ -1,11 +1,11 @@
 package com.marketMillenium.marketmillenium.controladores;
-import org.springframework.ui.Model;
 
+import org.springframework.ui.Model;
 import com.marketMillenium.marketmillenium.Dao.Usuario;
 import com.marketMillenium.marketmillenium.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,15 +16,26 @@ public class RegistroController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;  // Inyectamos el encoder
+
     @GetMapping("/Registrarse")
     public String mostrarFormulario(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "Registrarse";  //
+        return "Registrarse";
     }
 
     @PostMapping("/Registrarse")
     public String guardarUsuario(@ModelAttribute Usuario usuario, Model model) {
+        /* Asignar rol por defecto */
+        if (usuario.getRol() == null || usuario.getRol().isEmpty()) {
+            usuario.setRol("ROLE_USER");
+        }
+
+
         usuarioService.guardar(usuario);
+
+        model.addAttribute("mensaje", "Usuario registrado con éxito.");
         return "Login";
     }
 }

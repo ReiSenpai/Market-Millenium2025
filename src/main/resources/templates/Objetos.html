@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <th:block th:insert="~{fragmentos :: headFragmento}"></th:block>
+    <title>Objetos</title>
+</head>
+<body>
+<!-- NAVBAR -->
+<div th:insert="~{fragmentos :: encabezado}"></div>
+
+<main class="container my-5">
+    <h1 class="text-center mb-4">Abarrotes</h1>
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Recorremos la lista de abarrotes -->
+        <div class="col" th:each="item : ${abarrotes}">
+            <div class="card h-100 shadow-sm">
+                <!-- Imagen del producto -->
+                <img th:src="@{/img/img-products/{img}(img=${item.imagen})}"
+                     class="card-img-top"
+                     th:alt="${item.nombre}">
+
+                <div class="card-body">
+                    <!-- Nombre del producto -->
+                    <h5 class="card-title" th:text="${item.nombre}">Nombre Producto</h5>
+
+                    <!-- Descripción -->
+                    <p class="card-text" th:text="${item.descripcion}">Descripción breve del producto.</p>
+
+                    <!-- Precio -->
+                    <p class="fw-bold text-primary">
+                        Precio: S/.
+                        <span th:text="${item.precio}">0.00</span>
+                    </p>
+                </div>
+
+                <!-- ID -->
+                <div class="card-footer">
+                    <small class="text-muted">ID: <span th:text="${item.id}">000</span></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer th:insert="~{fragmentos :: pie-pagina}"></footer>
+<th:block th:insert="~{fragmentos :: boostrap-script}"></th:block>
+</body>
+</html>

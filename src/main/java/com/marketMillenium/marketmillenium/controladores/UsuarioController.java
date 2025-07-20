@@ -38,14 +38,14 @@ public class UsuarioController {
             HttpSession session,
             Model model
     ) {
-        // verficiar el usuario en sesión
+        /* verficiar el usuario en sesión*/
         Usuario usuario = (Usuario) session.getAttribute("usuarioLogueado");
-        // Verificamos que haya  usuario y que el ID sean lso nmismos
+        /*Verificamos que haya  usuario y que el ID sean lso nmismos*/
         if (usuario == null || !usuario.getId().equals(id)) {
             return "redirect:/login"; // r
         }
 
-        //se actualiza lso datos
+        /*se actualiza lso datos*/
         usuario.setNombre(nombre);
         usuario.setApellido(apellido);
         usuario.setDireccion(direccion);
@@ -69,13 +69,15 @@ public class UsuarioController {
             usuarioSesion.setDireccion(usuarioForm.getDireccion());
             usuarioSesion.setTelefono(usuarioForm.getTelefono());
 
-            usuarioService.guardar(usuarioSesion); // guarda los cambios
+            usuarioService.guardar(usuarioSesion);
+/* actualiza en sesión*/
+            session.setAttribute("usuarioLogueado", usuarioSesion);
 
-            session.setAttribute("usuarioLogueado", usuarioSesion); // actualiza en sesión
-
-            return "redirect:/misdatos"; // redirige nuevamente a la vista
+            return "redirect:/misdatos";
         } else {
             return "redirect:/login";
         }
 
-}}
+}
+
+}

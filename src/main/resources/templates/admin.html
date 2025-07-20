@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <title>Panel de Administración</title>
+    <!-- Insertar el head del fragmento -->
+    <th:block th:insert="~{fragmentosadmin :: headFragmento}"></th:block>
+</head>
+
+<body class="index-page">
+<!-- encabezado -->
+<div th:insert="~{fragmentosadmin :: encabezado}"></div><main>
+    <!-- Carrusel -->
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img th:src="@{img/offer-banner.png}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img th:src="@{img/summer-banner.png}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img th:src="@{img/BannerLays.png}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img th:src="@{img/banner1.png}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Productos destacados -->
+    <div class="container my-5">
+        <div class="row g-4 justify-content-center">
+            <!-- Producto 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img
+                            th:src="@{/img/img-products/gaseosa-set-pack.png}"
+                            class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Set pack Gaseosa</h5>
+                        <p class="card-text">Gaseosa Pepsi + 7Up + Concordia Sabor Piña</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0">S/.21.90</span>
+                            <div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                                <small class="text-muted">(4.5)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img
+                            th:src="@{img/img-products/gaseosa-set-pack.png}"
+                            class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Set pack Gaseosa</h5>
+                        <p class="card-text">Gaseosa Pepsi + 7Up + Concordia Sabor Piña</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0">S/.21.90</span>
+                            <div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                                <small class="text-muted">(4.5)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img
+                            th:src="@{img/img-products/gaseosa-set-pack.png}"
+                            class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Set pack Gaseosa</h5>
+                        <p class="card-text">Gaseosa Pepsi + 7Up + Concordia Sabor Piña</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0">S/.21.90</span>
+                            <div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                                <small class="text-muted">(4.5)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 4 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img
+                            th:src="@{img/img-products/gaseosa-set-pack.png}"
+                            class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Set pack Gaseosa</h5>
+                        <p class="card-text">Gaseosa Pepsi + 7Up + Concordia Sabor Piña</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0">S/.21.90</span>
+                            <div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                                <small class="text-muted">(4.5)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light">
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Carrusel marcas-->
+    <section class="logo-cloud py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Marcas de nuestros productos</h2>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center align-items-center">
+                <div class="col">
+                    <div class="logo-item text-center">
+                        <img
+                                th:src="@{img/img-marcas/coca.svg}"
+                                alt="Inca Kola" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-item text-center">
+                        <img
+                                th:src="@{img/img-marcas/inca-kola.svg}"
+                                alt="Inca Kola" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-item text-center">
+                        <img
+                                th:src="@{img/img-marcas/coca.svg}"
+                                alt="Inca Kola" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-item text-center">
+                        <img
+                                th:src="@{img/img-marcas/inca-kola.svg}"
+                                alt="Inca Kola" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-item text-center">
+                        <img
+                                th:src="@{img/img-marcas/coca.svg}"
+                                alt="Inca Kola" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="logo-item text-center">
+                        <img
+                                th:src="@{img/img-marcas/inca-kola.svg}"
+                                alt="Inca Kola" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Pie de página -->
+<footer th:insert="~{fragmentosadmin :: pie-pagina}"></footer>
+
+<!-- Scripts -->
+<th:block th:insert="~{fragmentosadmin :: boostrap-script}"></th:block>
+</body>
+</html>

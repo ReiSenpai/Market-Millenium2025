@@ -32,16 +32,16 @@ public class ReclamoController {
         Usuario usuarioLogueado = (Usuario) session.getAttribute("usuarioLogueado");
 
         if (usuarioLogueado != null) {
-            // Asociamos el reclamo al usuario logueado
+
             reclamo.setUsuario(usuarioLogueado);
 
-            // Opcional: rellenamos datos duplicados si no vienen del formulario
+
             reclamo.setNombreCompleto(usuarioLogueado.getNombre() + " " + usuarioLogueado.getApellido());
             reclamo.setDni(usuarioLogueado.getDni());
             reclamo.setTelefono(usuarioLogueado.getTelefono());
             reclamo.setCorreo(usuarioLogueado.getEmail());
         } else {
-            // Por seguridad, redirigir al login si no hay usuario en sesión
+
             return "redirect:/login";
         }
 
@@ -55,7 +55,7 @@ public class ReclamoController {
         if (usuarioLogueado != null) {
             List<Reclamo> misReclamos = reclamoRepository.findByUsuario(usuarioLogueado);
             model.addAttribute("reclamos", misReclamos);
-            return "misreclamos"; // esta será la vista donde mostrarás los reclamos
+            return "misreclamos";
         } else {
             return "redirect:/login";
         }
