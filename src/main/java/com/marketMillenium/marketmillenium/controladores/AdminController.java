@@ -21,10 +21,7 @@ public class AdminController {
 
 
 
-    @GetMapping("/productos")
-    public String productos() {
-        return "admin-productos";
-    }
+
 
     @GetMapping("/reclamos")
     public String reclamos() {

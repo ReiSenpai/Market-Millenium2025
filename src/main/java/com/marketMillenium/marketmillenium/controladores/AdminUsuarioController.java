@@ -8,36 +8,40 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/admin/usuarios")
+@RequestMapping("/admin/usuariosadmin")
 public class AdminUsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
 
+    // Listar todos los usuarios
     @GetMapping
     public String listarUsuarios(Model model) {
         model.addAttribute("usuarios", usuarioService.listarUsuarios());
         model.addAttribute("totalUsuarios", usuarioService.contarUsuarios());
-        return "usuariosadmin";
+        return "usuariosadmin";  // templates/usuariosadmin.html
     }
 
+    // Eliminar usuario por ID
     @GetMapping("/eliminar/{id}")
     public String eliminarUsuario(@PathVariable Long id) {
         usuarioService.eliminarUsuario(id);
-        return "redirect:/admin/usuarios";
+        return "redirect:/admin/usuariosadmin";
     }
 
+    // Mostrar formulario de edición (si lo necesitas)
     @GetMapping("/editar/{id}")
     public String mostrarFormularioEdicion(@PathVariable Long id, Model model) {
         Usuario usuario = usuarioService.buscarPorId(id)
                 .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado: " + id));
         model.addAttribute("usuario", usuario);
-        return "editar-usuario";
+        return "editar-usuario"; // templates/editar-usuario.html
     }
 
+    // Actualizar usuario
     @PostMapping("/actualizar")
     public String actualizarUsuario(@ModelAttribute Usuario usuario) {
         usuarioService.actualizarUsuario(usuario);
-        return "redirect:/admin/usuarios";
+        return "redirect:/admin/usuariosadmin";
     }
 }

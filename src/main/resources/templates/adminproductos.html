@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <th:block th:insert="~{fragmentosadmin :: headFragmento}"></th:block>
+    <title>Administrar Productos</title>
+</head>
+<body>
+<!-- NAVBAR ADMIN -->
+<div th:insert="~{fragmentosadmin :: encabezado}"></div>
+
+<main class="container my-5">
+    <h1 class="text-center mb-4">Gestión de Productos</h1>
+
+    <!-- Formulario para crear producto nuevo -->
+    <form th:action="@{/admin/productos}" method="post" enctype="multipart/form-data" class="row g-2 mb-4 border p-3">
+        <h4>Nuevo Producto</h4>
+        <div class="col-md-2">
+            <input class="form-control form-control-sm" type="text" name="nombre" placeholder="Nombre" required>
+        </div>
+        <div class="col-md-2">
+            <input class="form-control form-control-sm" type="text" name="categoria" placeholder="Categoría" required>
+        </div>
+        <div class="col-md-2">
+            <input class="form-control form-control-sm" type="text" name="marca" placeholder="Marca">
+        </div>
+        <div class="col-md-2">
+            <input class="form-control form-control-sm" type="number" step="0.01" name="precio" placeholder="Precio" required>
+        </div>
+        <div class="col-md-2">
+            <input class="form-control form-control-sm" type="number" name="stock" placeholder="Stock" required>
+        </div>
+        <div class="col-md-2">
+            <input class="form-control form-control-sm" type="text" name="unidadMedida" placeholder="Unidad Medida">
+        </div>
+        <div class="col-md-4 mt-2">
+            <input class="form-control form-control-sm" type="text" name="descripcion" placeholder="Descripción">
+        </div>
+        <div class="col-md-3 mt-2">
+            <input class="form-control form-control-sm" type="file" name="imagenFile" accept="image/*">
+        </div>
+        <div class="col-md-1 mt-2">
+            <button type="submit" class="btn btn-success btn-sm w-100">
+                <i class="bi bi-plus-circle"></i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Tabla de productos -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle">
+            <thead class="table-dark text-center">
+            <tr>
+                <th>ID</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Marca</th>
+                <th>Precio (S/.)</th>
+                <th>Stock</th>
+                <th>Unidad Medida</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${abarrotes}">
+                <form th:action="@{'/admin/productos/' + ${item.id}}" method="post" enctype="multipart/form-data">
+                    <td class="text-center" th:text="${item.id}"></td>
+                    <td class="text-center">
+                        <img th:src="@{/img/img-products/{img}(img=${item.imagen})}"
+                             alt="Imagen"
+                             class="img-thumbnail"
+                             style="max-width: 80px; max-height: 80px; object-fit: cover;">
+                        <input class="form-control form-control-sm mt-1" type="file" name="imagenFile" accept="image/*">
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" type="text" name="nombre" th:value="${item.nombre}" required>
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" type="text" name="categoria" th:value="${item.categoria}" required>
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" type="text" name="marca" th:value="${item.marca}">
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm text-end" type="number" step="0.01" name="precio" th:value="${item.precio}" required>
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm text-end" type="number" name="stock" th:value="${item.stock}" required>
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" type="text" name="unidadMedida" th:value="${item.unidadMedida}">
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" type="text" name="descripcion" th:value="${item.descripcion}">
+                    </td>
+                    <td class="text-center">
+                        <button type="submit" class="btn btn-sm btn-primary me-1">
+                            <i class="bi bi-save"></i> Guardar
+                        </button>
+                        <a th:href="@{'/admin/productos/eliminar/' + ${item.id}}"
+                           class="btn btn-sm btn-danger"
+                           onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                            <i class="bi bi-trash"></i> Eliminar
+                        </a>
+                    </td>
+                </form>
+            </tr>
+            <tr th:if="${#lists.isEmpty(abarrotes)}">
+                <td colspan="10" class="text-center text-muted">No hay productos registrados.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- FOOTER ADMIN -->
+<footer th:insert="~{fragmentosadmin :: pie-pagina}"></footer>
+<th:block th:insert="~{fragmentosadmin :: boostrap-script}"></th:block>
+</body>
+</html>

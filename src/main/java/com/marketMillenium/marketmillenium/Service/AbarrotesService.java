@@ -16,4 +16,18 @@ public class AbarrotesService {
     public List<Abarrotes> listarTodos() {
         return abarroteRepository.findAll();
     }
+
+    public void guardar(Abarrotes abarrotes) {
+        abarroteRepository.save(abarrotes);
+    }
+
+    public Abarrotes buscarPorId(Long id) {
+        return abarroteRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Producto no encontrado con ID: " + id));
+    }
+
+    public void eliminar(Long id) {
+        abarroteRepository.deleteById(id);
+    }
 }
+

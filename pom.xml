@@ -11,7 +11,8 @@
 	<groupId>com.marketMillenium</groupId>
 	<artifactId>marketmillenium</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MarketMillenium</name>
+    <packaging>pom</packaging>
+    <name>MarketMillenium</name>
 	<description>Plataforma de comercio electrónico para productos y servicios</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,10 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>uploads</module>
+    </modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>

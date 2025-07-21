@@ -35,7 +35,7 @@
             </thead>
             <tbody>
             <tr th:each="usuario : ${usuarios}">
-                <form th:action="@{/admin/usuarios/actualizar}" method="post" class="row g-2">
+                <form th:action="@{/admin/usuariosadmin/actualizar}" method="post" class="row g-2">
                     <input type="hidden" name="id" th:value="${usuario.id}" />
                     <td class="text-center" th:text="${usuario.id}"></td>
                     <td><input class="form-control form-control-sm" type="text" name="nombre" th:value="${usuario.nombre}" required /></td>
@@ -53,11 +53,12 @@
                         <button type="submit" class="btn btn-sm btn-primary me-1">
                             <i class="bi bi-save"></i> Guardar
                         </button>
-                        <a th:href="@{'/admin/usuarios/eliminar/' + ${usuario.id}}"
+                        <a th:href="@{'/admin/usuariosadmin/eliminar/' + ${usuario.id}}"
                            class="btn btn-sm btn-danger"
                            onclick="return confirm('¿Seguro que deseas eliminar este usuario?');">
                             <i class="bi bi-trash"></i> Eliminar
                         </a>
+
                     </td>
                 </form>
             </tr>

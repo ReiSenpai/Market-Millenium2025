@@ -1,83 +1,59 @@
-<!-- head -->
-<th:block th:fragment="headFragmento">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" th:href="@{/css/global.css}">
-    <link rel="stylesheet" th:href="@{/css/estilo.css}">
-</th:block>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <!-- Head Fragment -->
+    <th:block th:fragment="headFragmento">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" th:href="@{/css/global.css}">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}">
+    </th:block>
 
+    <!-- Bootstrap Script -->
+    <th:block th:fragment="boostrap-script">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+    </th:block>
+</head>
 
-<th:block th:fragment="boostrap-script">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-</th:block>
-
-<!-- Encabezado de pagina -->
+<body>
+<!-- Encabezado ADMIN -->
 <div th:fragment="encabezado" class="container-fluid">
-    <nav class="navbar navbar-expand-md bg-warning p-3 fixed-top shadow-lg" id="header"
-         style="background-color: #ffcc00 !important;">
+    <nav class="navbar navbar-expand-md bg-dark p-3 shadow-lg">
         <div class="container-fluid">
-            <a th:href="@{/}" class="navbar-brand fs-2 fw-bold">
-                <img src="/img/MMtienda.png" alt="Logo de Market Millenium">
+            <a th:href="@{/admin}" class="navbar-brand fs-2 fw-bold text-white">
+                <img src="/img/MMtienda.png" alt="Logo" width="50"> ADMIN
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav"
+                    aria-controls="adminNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a th:href="@{/index}"
-                                            class="nav-link active fs-4 text-primary text-hover fw-bold">
-                        <i class="bi bi-house-door-fill"></i> Inicio</a>
+            <div class="collapse navbar-collapse" id="adminNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a th:href="@{/admin/usuariosadmin}" class="nav-link text-white fw-bold">
+                            <i class="bi bi-person-fill"></i> Usuarios
+                        </a>
                     </li>
-                    <li class="nav-item"><a th:href="@{/}" class="nav-link fs-4 text-primary text-hover fw-bold">
-                        <i class="bi bi-bag-fill"></i> Tienda</a>
+                    <li class="nav-item">
+                        <a th:href="@{/admin/reclamos}" class="nav-link text-white fw-bold">
+                            <i class="bi bi-chat-left-text-fill"></i> Reclamos
+                        </a>
                     </li>
-                    <li class="nav-item"><a th:href="@{/contacto}"
-                                            class="nav-link fs-4 text-primary text-hover fw-bold">
-                        <i class="bi bi-people-fill"></i> Contáctanos</a>
+                    <li class="nav-item">
+                        <a th:href="@{/admin/productos}" class="nav-link text-white fw-bold">
+                            <i class="bi bi-box-seam-fill"></i> Productos
+                        </a>
                     </li>
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-4 text-primary text-hover fw-bold" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-hand-index-fill"></i> Conócenos</a>
-                        <ul class="dropdown-menu" style="background-color: #ffcc00 !important;">
-                            <li><a th:href="@{/nosotros}" class="nav-link fs-5 text-primary text-hover fw-semibold">Nosotros</a></li>
-                            <li><a th:href="@{/nosotros}" class="nav-link fs-5 text-primary text-hover fw-semibold">Ubícanos</a></li>
-                            <li><a th:href="@{/videoProductos}" class="nav-link fs-5 text-primary text-hover fw-semibold">Presentación</a></li>
-                            <li><a th:href="@{/sugerencias}" class="nav-link fs-5 text-primary text-hover fw-semibold">Sugerencias</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Usuario -->
-                    <li class="nav-item dropdown" th:if="${session.usuarioLogueado == null}">
-                        <a class="nav-link dropdown-toggle fs-4 text-primary text-hover fw-bold" role="button"
-                           data-bs-toggle="dropdown">
-                            <i class="bi bi-person-circle"></i> Usuario</a>
-                        <ul class="dropdown-menu" style="background-color: #ffcc00 !important;">
-                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" th:href="@{/login}">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" th:href="@{/Registrarse}">Registrarse</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Si estasd logueado -->
-                    <li class="nav-item dropdown" th:if="${session.usuarioLogueado != null}">
-                        <a class="nav-link dropdown-toggle fs-4 text-primary text-hover fw-bold" role="button"
-                           data-bs-toggle="dropdown">
-                            <i class="bi bi-person-circle"></i> [[${session.usuarioLogueado.nombre}]]</a>
-                        <ul class="dropdown-menu" style="background-color: #ffcc00 !important;">
-                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" th:href="@{/admin/usuariosadmin}">Usuario</a></li>
-                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" th:href="@{/reclamos}">Reclamos</a></li>
-                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" th:href="@{/productos}">Productos</a></li>
-                            <li><a class="dropdown-item fs-5 text-primary fw-semibold" th:href="@{/logout}">Cerrar Sesión</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a th:href="@{/logout}" class="nav-link text-danger fw-bold">
+                            <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -97,10 +73,10 @@
             <div class="col-md-4">
                 <h5>Enlaces Rápidos</h5>
                 <ul class="list-unstyled">
-                    <li><a th:href="@{/}" class="text-primary">Inicio</a></li>
-                    <li><a th:href="@{/}" class="text-primary">Tienda</a></li>
-                    <li><a th:href="@{/nosotros}" class="text-primary">Nosotros</a></li>
-                    <li><a th:href="@{/}" class="text-primary">Política de Privacidad</a></li>
+                    <li><a hth:ref="@{/}" class="text-primary">Inicio</a></li>
+                    <li><a th:ref="@{/}" class="text-primary">Tienda</a></li>
+                    <li><a th:ref="@{/nosotros}" class="text-primary">Nosotros</a></li>
+                    <li><a th:ref="@{/}" class="text-primary">Política de Privacidad</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -114,3 +90,5 @@
         <img src="/img/payments.png" alt="Métodos de pago">
     </div>
 </footer>
+</body>
+</html>
